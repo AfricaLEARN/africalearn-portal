@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+
+collections:
+  - name: "news"
+    label: "News & Announcements"
+    folder: "_news"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date"}
+      - {label: "Category", name: "category", widget: "select", options: ["Admissions", "Events", "Academic", "Accreditation", "Platform"]}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "videos"
+    label: "Learning Session Videos"
+    folder: "_videos"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Faculty", name: "faculty", widget: "select", options: ["Information Technology", "Business Innovation and Management", "Agriculture and Natural Sciences"]}
+      - {label: "Subject", name: "subject", widget: "string"}
+      - {label: "Vimeo ID", name: "vimeo_id", widget: "string"}
+      - {label: "Duration", name: "duration", widget: "string"}
+      - {label: "Date Recorded", name: "recorded", widget: "date"}
+
+  - name: "books"
+    label: "E-Library Books"
+    folder: "_books"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Faculty", name: "faculty", widget: "select", options: ["Information Technology", "Business Innovation and Management", "Agriculture and Natural Sciences"]}
+      - {label: "PDF Link", name: "pdf_link", widget: "string"}
+      - {label: "Cover Colour", name: "colour", widget: "select", options: ["green", "blue", "teal"]}
