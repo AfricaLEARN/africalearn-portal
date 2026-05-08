@@ -1259,6 +1259,11 @@ placeholder="Search courses, books, videos..." />
     });
   }
 
+  // ── Init dynamic content ── 
+  document.addEventListener('DOMContentLoaded', function() { 
+    loadNews();
+  }); 
+  
   // ── Close mobile menu on outside click ──
   document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobileMenu');
