@@ -1182,6 +1182,34 @@ placeholder="Search courses, books, videos..." />
 </footer>
 
 <script>
+  
+  // ── Load dynamic content ──
+  async function loadContent(type) {
+  try {    
+    const res = await fetch(`/.netlify/functions/get-content?type=${type}`);    
+    const files = await res.json();     
+    return files.filter(f => f.name !== '.gitkeep');
+  } catch(e) { return []; }
+}  
+  
+  async function loadNews() {  
+    const files = await loadContent('news');  
+    if (files.length === 0) return;   
+    const container = document.getElementById('dynamic-news');   
+    if (!container) return;  
+    container.innerHTML = '';
+    files.forEach(file => {     
+      const name = file.name.replace('.md','').replace(/-/g,' ');  
+      container.innerHTML += `      
+      <div class="news-full-item">     
+       <div class="news-full-meta">          
+        <span class="news-full-tag">News</span>      
+      </div>         
+      <h4>${name}</h4>       
+    </div>`;  
+    }); 
+  } 
+  
   // ── Page navigation ──
   function doSearch() {
     var query = document.getElementById('searchInput').value;
