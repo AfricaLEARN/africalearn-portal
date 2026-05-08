@@ -1193,16 +1193,18 @@ placeholder="Search courses, books, videos..." />
   } catch(e) { return []; }
 }  
   
-  async function loadNews() {  
-    const files = await loadContent('news');  
-    if (files.length === 0) return;   
-    const container = document.getElementById('dynamic-news');   
-    if (!container) return;  
-    container.innerHTML = '';
-    files.forEach(file => {     
-      const name = file.name.replace('.md','').replace(/-/g,' ');  
-     container.innerHTML += '<div class="news-full-item"><div class="news-full
-meta"><span class="news-full-tag">News</span></div><h4>' + name + '</h4></div>';
+  async function loadNews() {
+    const files = await loadContent('news');
+    if (files.lengt === 0) return;
+    const container = document.getElementbyId('dynamic-news');
+    if (!container) return;
+    files.foreach(function(file) {
+      var name = file.name.replace('.md','').replace(/-/g,' ');
+      var div = document.createElement('div');
+      div.className = 'news-full-item';
+      div.innerHTML = '<div class="news-full-meta"><span class="news-full-
+tag">News</span></div><h4>' + name + '</h4>';
+        container.appendChild(div);
     });
   }
   
