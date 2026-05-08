@@ -1,0 +1,20 @@
+title: AfricaLearn E-Learning Portal
+description: Your gateway to knowledge and growth
+url: "https://africalearn-elearning.netlify.app"
+
+plugins:
+  - jekyll-feed
+
+collections:
+  news:
+    output: false
+  videos:
+    output: false
+  books:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
