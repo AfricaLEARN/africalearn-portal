@@ -297,9 +297,9 @@
     }
 
     /* ─── PAGE SECTIONS (hidden by default) ─── */
-    .page { display: none; }
-    .page.active { display: block; }
-    #home { display: block; }
+    .page { display: none !important; }
+        .page.active { display: block !important; }
+        #home { display: block !important; }
 
     /* ─── INNER PAGE HERO ─── */
     .page-hero {
@@ -970,7 +970,7 @@ placeholder="Search courses, books, videos..." />
     <h2>Learning Sessions</h2>
     <p>Recorded lectures and tutorials hosted on Vimeo</p>
   </div>
-  <section id="on-demand">
+  <section style="padding:40px;">
     
    <!-- IT Faculty -->
     <div style="max-width:1100px; margin:0 auto 48px;">
